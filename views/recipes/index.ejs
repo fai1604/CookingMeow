@@ -1,0 +1,33 @@
+<%- include("../partials/header") %>
+
+<div class="ui main text container">
+    <% if(error && error.length > 0){ %>
+      <div class="ui negative message">
+        <div class="header">
+          <%= error %>
+        </div>
+      </div>
+    <% } %>
+    <div class="ui top attached segment">
+        <div class="ui unstackable items">
+            <% recipes.forEach(function(recipes){ %>
+                <div class="item">
+                    <div class="image">
+                      <img src="<%= recipes.image %>">
+                    </div>
+                    <div class="content">
+                      <a class="header" href="/recipes/<%= recipes._id %>"><%= recipes.name %></a>
+                      <div class="meta">
+                        <span><%= recipes.ingredients %>></span>
+                      </div>
+                      <div class="description">
+                        <p><%= recipes.directions %></p>
+                      </div>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+</div>
+
+<%- include("../partials/footer") %>

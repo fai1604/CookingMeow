@@ -1,0 +1,25 @@
+<%- include("partials/header") %>
+
+<div class="ui main text container segment">
+    <% if(error && error.length > 0){ %>
+      <div class="ui negative message">
+        <div class="header">
+            <%= error %>
+        </div>
+      </div>
+    <% } %>
+    <img class="ui centered medium image" src="https://i.imgur.com/ietaz6s.png">
+    <h1 class="ui center aligned header">CookingMeow!</h1>
+    <h3 class="ui center aligned header">Resipi yang sedap dan menarik, hanya di CookingMeow!</h3>
+    <h4 class="ui center aligned header"><a href="/recipes">Lihat semua resepi!</a></h4>
+</div>
+
+<ul class="slideshow">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+
+<%- include("partials/footer") %>

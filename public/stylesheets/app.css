@@ -1,0 +1,105 @@
+.container.main {
+    margin-top: 7.0em;
+}
+
+.ui.main.text.container.segment {
+    z-index: 10;
+}
+
+.ui.action.input.focus {
+    height: 50px;
+    position: relative;
+}
+
+#error {
+    z-index: 20;
+}
+
+#landing-header {
+    z-index: 1;
+    /* position other than static */
+    position: relative;
+    text-align: center;
+    /* vh - view height */
+    padding-top: 40vh;
+}
+
+#landing-header h1 {
+    color: #fff;
+}
+
+.slideshow { 
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    /* make sure background image is behind title etc */
+    z-index: 0;
+    /* remove bullet points */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.slideshow li { 
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* allow images to take up entire page */
+    background-size: cover;
+    /* center the images perfectly on page */
+    background-position: 50% 50%;
+    /* images not repeating horizontally/vertically */
+    background-repeat: no-repeat;
+    opacity: 0;
+    /* background images placed behind title etc */
+    z-index: 0;
+    /* linear - same speed from beginning to end */
+    animation: imageAnimation 50s linear infinite; 
+}
+
+.slideshow li:nth-child(1) { 
+    background-image: url(https://imgur.com/2bD8v5G.jpg) 
+  }
+  .slideshow li:nth-child(2) { 
+    background-image: url(https://imgur.com/r19o13R.jpg);
+    animation-delay: 10s; 
+  }
+  .slideshow li:nth-child(3) { 
+    background-image: url(https://imgur.com/FxP0GFs.jpg);
+    animation-delay: 20s; 
+  }
+  .slideshow li:nth-child(4) { 
+    background-image: url(https://imgur.com/s6GnDEF.jpg);
+    animation-delay: 30s; 
+  }
+  .slideshow li:nth-child(5) { 
+    background-image: url(https://imgur.com/ziSUWpf.jpg);
+    animation-delay: 40s; 
+  }
+
+  @keyframes imageAnimation { 
+    0% { 
+      opacity: 0; 
+      animation-timing-function: ease-in;
+    }
+    10% {
+      opacity: 1;
+      animation-timing-function: ease-out;
+    }
+    20% {
+      opacity: 1
+    }
+    30% {
+      opacity: 0
+    }
+  }
+
+  /* Older browser support - .no-cssanimations class added by modernizr */
+.no-cssanimations .slideshow li {
+	opacity: 1;
+}
+  

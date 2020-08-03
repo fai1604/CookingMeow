@@ -1,0 +1,44 @@
+<%- include("../partials/header") %>
+
+<div class="ui main text container segment">
+    <% if(error && error.length > 0){ %>
+        <div class="ui negative message">
+          <div class="header">
+              <%= error %>
+          </div>
+        </div>
+      <% } %>
+    <h1 style="text-align: center;">Create a New Recipe!</h1>
+    <div style="width: 75%; margin: 25px auto;">
+        <form action="/recipes" method="POST">
+            <div class="ui form">
+                <div class="field">
+                    <label>Name</label>
+                    <input type="text" name="name" placeholder="name">
+                </div>
+                <br>
+                <div class="field">
+                    <label>Image Url</label>
+                    <input type="text" name="image" placeholder="image">
+                </div>
+                <br>
+                <div class="field">
+                  <label>Ingredients</label>
+                  <textarea name="ingredients" aria-label="With textarea"></textarea>
+                </div>
+                <div class="field">
+                  <label>Instructions</label>
+                  <textarea name="instructions"aria-label="With textarea"></textarea>
+                </div>
+                <br>
+                <button class="fluid ui button">
+                    Create!
+                </button>    
+            </div>
+        </form>
+        <br>
+        <a href="/recipes">Back</a>
+    </div>
+</div>
+
+<%- include("../partials/footer") %>
