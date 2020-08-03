@@ -11,13 +11,16 @@ var express     = require("express"),
     flash       = require("connect-flash"),
     recipeNew   = require("./models/recipe")
 
-const MongoClient = require('mongodb').MongoClient;
-const client = new MongoClient("mongodb+srv://fai:fai160400@cluster0.n5zv5.mongodb.net/cookingmeow?retryWrites=true&w=majority", { useNewUrlParser: true });
-client.connect(err => {
-    const collection = client.db("test").collection("devices");
-      // perform actions on the collection object
-    client.close();
-});
+// const MongoClient = require('mongodb').MongoClient;
+// const client = new MongoClient(process.env.DATABASEURL, { useNewUrlParser: true });
+// client.connect(err => {
+//     const collection = client.db("test").collection("devices");
+//       // perform actions on the collection object
+//     client.close();
+// });
+
+mongoose.connect(process.env.DATABASEURL)
+console.log(process.env.DATABASEURL)
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
